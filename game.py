@@ -431,36 +431,36 @@ bg_x = 0
 game_over = False
 
 run = True
-while run: 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
+# while run: 
+#     for event in pygame.event.get():
+#         if event.type == pygame.QUIT:
+#             run = False
 
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE and jump_count < max_jumps and not game_over:
-                is_jump = True
-                jump_vel = 12
-                jump_anim = 0
-                jump_count += 1
+#         if event.type == pygame.KEYDOWN:
+#             if event.key == pygame.K_SPACE and jump_count < max_jumps and not game_over:
+#                 is_jump = True
+#                 jump_vel = 12
+#                 jump_anim = 0
+#                 jump_count += 1
 
-            if event.key == pygame.K_f and not game_over:
-                current_time = time.time()
-                if current_time - last_kunay_time >= kunay_cooldown:
-                    last_kunay_time = current_time
+#             if event.key == pygame.K_f and not game_over:
+#                 current_time = time.time()
+#                 if current_time - last_kunay_time >= kunay_cooldown:
+#                     last_kunay_time = current_time
 
-                    if direction == "right":
-                        kunays.append(pygame.Rect(
-                            player_x + 50, player_y + 30,
-                            kunay_img.get_width(), kunay_img.get_height()
-                        ))
-                    else:
-                        kunays.append(pygame.Rect(
-                            player_x, player_y + 30,
-                            kunay_img.get_width(), kunay_img.get_height()
-                        ))
+#                     if direction == "right":
+#                         kunays.append(pygame.Rect(
+#                             player_x + 50, player_y + 30,
+#                             kunay_img.get_width(), kunay_img.get_height()
+#                         ))
+#                     else:
+#                         kunays.append(pygame.Rect(
+#                             player_x, player_y + 30,
+#                             kunay_img.get_width(), kunay_img.get_height()
+#                         ))
 
-    screen.blit(background, (bg_x, 0))
-    screen.blit(background, (bg_x + WIDTH, 0))
+#     screen.blit(background, (bg_x, 0))
+#     screen.blit(background, (bg_x + WIDTH, 0))
 
     if not game_over:
         keys = pygame.key.get_pressed()
